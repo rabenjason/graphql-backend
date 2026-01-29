@@ -3,11 +3,14 @@ type Utilisateur {
   nom: String!
   prenom: String!
   email: String!
-  motDePasse: String!
+  motDePasse: String!  # Toujours présent dans la DB, mais jamais exposé
   telephone: String
   facebook: String
   whatsapp: String
   photo: String
+  dateSuppression: String  # Format ISO 8601 (ex: "2024-12-31T12:00:00Z")
+  createdAt: String        # Format ISO 8601
+  updatedAt: String        # Format ISO 8601
 }
 
 type AuthJWT {
@@ -20,11 +23,22 @@ type DeconnexionResponse {
   message: String!
 }
 
+type DeleteResponse {
+  success: Boolean!
+  message: String!
+  utilisateur: Utilisateur
+}
+
+type ReactivationResponse {
+  success: Boolean!
+  message: String!
+  utilisateur: Utilisateur
+}
+
 type Query {
   utilisateurs: [Utilisateur!]!
   utilisateur(id: String!): Utilisateur
 }
-
 
 type Mutation {
   addUtilisateur(
@@ -42,4 +56,17 @@ type Mutation {
 
   deconnexion: DeconnexionResponse
 
+  updateUtilisateur(
+    nom: String
+    prenom: String
+    email: String
+    motDePasse: String
+    telephone: String
+    facebook: String
+    whatsapp: String
+    photo: String
+  ): Utilisateur
+
+  deleteUtilisateur: DeleteResponse
+  reactiverCompte: ReactivationResponse
 }
