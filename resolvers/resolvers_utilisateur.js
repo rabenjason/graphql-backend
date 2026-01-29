@@ -1,7 +1,8 @@
 import { addUtilisateur } from "../mutation/utilisateur/addUtilisateur.js";
-import { authentification } from "../mutation/utilisateur/authentification.js";
+import { authentification } from "../mutation/auth/authentification.js";
 import { utilisateurs } from "../query/utilisateur/findMany.js";
 import { utilisateur } from "../query/utilisateur/findOne.js";
+import { deconnexion } from "../mutation/auth/deconnexion.js";
 
 const resolvers_utilisateur = {
   Query: {
@@ -14,7 +15,8 @@ const resolvers_utilisateur = {
   Mutation: {
     // Ajouter un utilisateur
     addUtilisateur,
-    authentification
+    authentification,
+    deconnexion,
   },
 };
 
