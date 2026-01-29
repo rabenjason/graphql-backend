@@ -15,6 +15,11 @@ type AuthJWT {
   token: String
 }
 
+type DeconnexionResponse {
+  success: Boolean!
+  message: String!
+}
+
 type Query {
   utilisateurs: [Utilisateur!]!
   utilisateur(id: String!): Utilisateur
@@ -34,5 +39,7 @@ type Mutation {
   ): Utilisateur
 
   authentification(email: String!, motDePasse: String!): AuthJWT
+
+  deconnexion: DeconnexionResponse
 
 }

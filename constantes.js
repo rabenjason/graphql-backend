@@ -9,7 +9,9 @@ const constantes = {
   MOT_DE_PASSE_INCORRECT: "Mot de passe incorrect",
   ERREUR_CREATION_TOKEN: "Erreur création token",
   ERREUR_AUTH_UTILISATEUR: "Erreur authentification",
-  VERIFICATION_TOKEN: "Token invalide"
+  VERIFICATION_TOKEN: "Token invalide",
+  DECONNEXION_REUSSIE: "Déconnexion réussie",
+  ERREUR_DECONNEXION: "Erreur lors de la déconnexion",
 };
 
 export default constantes;
