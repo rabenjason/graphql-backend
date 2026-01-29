@@ -1,5 +1,4 @@
 import { PrismaClient } from "@prisma/client";
-import shortid from "shortid";
 import bcrypt from "bcryptjs";
 import constantes from "../../constantes.js";
 
@@ -7,10 +6,7 @@ const prisma = new PrismaClient();
 
 const addUtilisateur = async (parent, args) => {
   try {
-
-    const { nom, prenom, email, motDePasse } = args;
-
-    const id_utilisateur = shortid.generate();
+    const { nom, prenom, email, motDePasse, telephone, facebook, whatsapp, photo } = args;
 
     // Vérification de l'email avec la regex
     if (!constantes.REGEX_VERIFICATION_EMAIL.test(email)) {
@@ -24,34 +20,35 @@ const addUtilisateur = async (parent, args) => {
 
     // Vérification si l'email est déjà utilisé
     const utilisateurExist = await prisma.utilisateur.findUnique({
-      where: {
-        email: email,
-      },
+      where: { email: email },
     });
 
     if (utilisateurExist) {
       throw new Error(`${constantes.EMAIL_DEJA_UTILISE} ${email}`);
     }
 
-    // Hashage du mot de passe
+    // Hashage du mot dePasse
     const hashMotDePasse = await bcrypt.hash(motDePasse, 10);
 
     // Création de l'utilisateur dans la base de données
     const nouvelUtilisateur = await prisma.utilisateur.create({
       data: {
-        id_utilisateur,
         nom,
         prenom,
         email,
-        motDePasse: hashMotDePasse
+        motDePasse: hashMotDePasse,
+        telephone,
+        facebook,
+        whatsapp,
+        photo,
       },
     });
 
-    // Retourner la réponse au front-end avec les données de l'utilisateur créé
-    return nouvelUtilisateur;
+    // Ne jamais retourner le mot de passe
+    const { motDePasse: _, ...utilisateurSansMotDePasse } = nouvelUtilisateur;
+    return utilisateurSansMotDePasse;
 
   } catch (error) {
-    // Gestion des erreurs
     console.error(error);
     throw new Error(constantes.ERREUR_CREATION_UTILISATEUR);
   }

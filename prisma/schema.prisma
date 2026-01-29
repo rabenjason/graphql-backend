@@ -8,13 +8,16 @@ datasource db {
 }
 
 model Utilisateur {
-  id_utilisateur String  @id 
-  nom            String
-  prenom         String
-  email          String  @unique
-  motDePasse     String
-  telephone      String?
-  facebook       String?
-  whatsapp       String?
-  photo          String?
+  id_utilisateur  String   @id @default(cuid())  // Utilisation de cuid() pour des IDs uniques
+  nom             String
+  prenom          String
+  email           String   @unique
+  motDePasse      String
+  telephone       String?
+  facebook        String?
+  whatsapp        String?
+  photo           String?
+  dateSuppression DateTime?  // Date à laquelle le compte est marqué pour suppression
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
 }

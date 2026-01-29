@@ -12,6 +12,14 @@ const constantes = {
   VERIFICATION_TOKEN: "Token invalide",
   DECONNEXION_REUSSIE: "Déconnexion réussie",
   ERREUR_DECONNEXION: "Erreur lors de la déconnexion",
+  ERREUR_MISE_A_JOUR_UTILISATEUR: "Erreur lors de la mise à jour du profil.",
+  
+  // Constantes pour la suppression
+  COMPTE_SUPPRESSION_EN_ATTENTE: "Votre compte est marqué pour suppression. Vous pouvez le réactiver dans les 30 prochains jours.",
+  COMPTE_DEJA_MARQUE_SUPPRESSION: "Votre compte est déjà marqué pour suppression.",
+  COMPTE_REACTIVE_SUCCES: "Votre compte a été réactivé avec succès.",
+  SUPPRESSION_DEFINITIVE_EFFECTUEE: "Suppression définitive effectuée.",
+  ERREUR_SUPPRESSION_UTILISATEUR: "Erreur lors de la suppression du compte."
 };
 
 export default constantes;
