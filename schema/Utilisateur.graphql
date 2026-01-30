@@ -29,11 +29,6 @@ type DeleteResponse {
   utilisateur: Utilisateur
 }
 
-type ReactivationResponse {
-  success: Boolean!
-  message: String!
-  utilisateur: Utilisateur
-}
 
 type Query {
   utilisateurs: [Utilisateur!]!
@@ -68,5 +63,4 @@ type Mutation {
   ): Utilisateur
 
   deleteUtilisateur: DeleteResponse
-  reactiverCompte: ReactivationResponse
-}
+  }

@@ -1,3 +1,4 @@
+import { deleteUtilisateur } from "../mutation/utilisateur/deleteUtilisateur.js";
 import { updateUtilisateur } from "../mutation/utilisateur/updateUtilisateur.js";
 import { addUtilisateur } from "../mutation/utilisateur/addUtilisateur.js";
 import { authentification } from "../mutation/auth/authentification.js";
@@ -18,7 +19,8 @@ const resolvers_utilisateur = {
     addUtilisateur,
     authentification,
     deconnexion,
-    updateUtilisateur
+    updateUtilisateur,
+    deleteUtilisateur
   },
 };
 
