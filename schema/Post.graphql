@@ -26,6 +26,9 @@ type Query {
   
   # Récupérer les posts d'un utilisateur
   postsByUtilisateur(utilisateurId: String!): [Post!]!
+  
+  # Récupérer MES posts (l'utilisateur connecté)
+  mesPosts: [Post!]!
 }
 
 type Mutation {

@@ -29,6 +29,7 @@ const constantes = {
   POST_NON_TROUVE: "Post introuvable",
   ERREUR_MISE_A_JOUR_POST: "Erreur lors de la mise à jour du post",
   ERREUR_SUPPRESSION_POST: "Erreur lors de la suppression du post",
+  ERREUR_RECUPERATION_POSTS: "Erreur lors de la récupération des posts",
   };
 
 export default constantes;

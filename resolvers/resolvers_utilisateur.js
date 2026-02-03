@@ -6,6 +6,7 @@ import { utilisateurs } from "../query/utilisateur/findMany.js";
 import { deconnexion } from "../mutation/auth/deconnexion.js";
 import { utilisateur } from "../query/utilisateur/findOne.js";
 import { createPost } from "../mutation/post/createPost.js";
+import { mesPosts } from "../query/post/mesPosts.js";
 
 const resolvers_utilisateur = {
   Query: {
@@ -14,6 +15,9 @@ const resolvers_utilisateur = {
 
     // findOne
     utilisateur,
+    
+    // utilisateur profile post
+    mesPosts,
   },
   Mutation: {
     // Ajouter un utilisateur
