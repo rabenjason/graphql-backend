@@ -5,6 +5,7 @@ import { authentification } from "../mutation/auth/authentification.js";
 import { utilisateurs } from "../query/utilisateur/findMany.js";
 import { deconnexion } from "../mutation/auth/deconnexion.js";
 import { utilisateur } from "../query/utilisateur/findOne.js";
+import { createPost } from "../mutation/post/createPost.js";
 
 const resolvers_utilisateur = {
   Query: {
@@ -20,7 +21,8 @@ const resolvers_utilisateur = {
     authentification,
     deconnexion,
     updateUtilisateur,
-    deleteUtilisateur
+    deleteUtilisateur,
+    createPost,
   },
 };
 

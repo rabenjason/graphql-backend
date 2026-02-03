@@ -19,7 +19,16 @@ const constantes = {
   COMPTE_DEJA_MARQUE_SUPPRESSION: "Votre compte est déjà marqué pour suppression.",
   COMPTE_REACTIVE_SUCCES: "Votre compte a été réactivé avec succès.",
   SUPPRESSION_DEFINITIVE_EFFECTUEE: "Suppression définitive effectuée.",
-  ERREUR_SUPPRESSION_UTILISATEUR: "Erreur lors de la suppression du compte."
-};
+  ERREUR_SUPPRESSION_UTILISATEUR: "Erreur lors de la suppression du compte.",
+
+  // Messages pour les posts
+  POST_VIDE: "Le post doit contenir du texte ou une image",
+  POST_CREE_AVEC_SUCCES: "Post créé avec succès",
+  ERREUR_CREATION_POST: "Erreur lors de la création du post",
+  UTILISATEUR_NON_AUTHENTIFIE: "Vous devez être connecté pour créer un post",
+  POST_NON_TROUVE: "Post introuvable",
+  ERREUR_MISE_A_JOUR_POST: "Erreur lors de la mise à jour du post",
+  ERREUR_SUPPRESSION_POST: "Erreur lors de la suppression du post",
+  };
 
 export default constantes;
