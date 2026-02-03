@@ -8,9 +8,9 @@ type Utilisateur {
   facebook: String
   whatsapp: String
   photo: String
-  dateSuppression: String  # Format ISO 8601 (ex: "2024-12-31T12:00:00Z")
-  createdAt: String        # Format ISO 8601
-  updatedAt: String        # Format ISO 8601
+  dateSuppression: String  # Format  (ex: "2024-12-31T12:00:00Z")
+  createdAt: String        
+  updatedAt: String        
 }
 
 type AuthJWT {

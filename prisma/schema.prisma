@@ -20,4 +20,15 @@ model Utilisateur {
   dateSuppression DateTime?  // Date à laquelle le compte est marqué pour suppression
   createdAt       DateTime   @default(now())
   updatedAt       DateTime   @updatedAt
+  posts           Post[]
+}
+
+model Post {
+  id_post       String    @id @default(cuid())
+  contenu       String?
+  image         String?   // URL vers l'image (ex: Cloudinary, S3)
+  utilisateurId String
+  utilisateur   Utilisateur @relation(fields: [utilisateurId], references: [id_utilisateur])
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
 }

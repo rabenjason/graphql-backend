@@ -1,0 +1,47 @@
+#import "./Utilisateur"
+
+
+type Post {
+  id_post: String!
+  contenu: String
+  image: String
+  utilisateur: Utilisateur!
+  createdAt: String
+  updatedAt: String
+}
+
+type PostResponse {
+  success: Boolean!
+  message: String!
+  post: Post
+}
+
+
+type Query {
+  # Récupérer tous les posts
+  posts: [Post!]!
+  
+  # Récupérer un post par ID
+  post(id: String!): Post
+  
+  # Récupérer les posts d'un utilisateur
+  postsByUtilisateur(utilisateurId: String!): [Post!]!
+}
+
+type Mutation {
+  # Créer un post
+  createPost(
+    contenu: String
+    image: String
+  ): PostResponse!
+  
+  # Mettre à jour un post
+  updatePost(
+    id_post: String!
+    contenu: String
+    image: String
+  ): PostResponse!
+  
+  # Supprimer un post
+  deletePost(id_post: String!): PostResponse!
+}
